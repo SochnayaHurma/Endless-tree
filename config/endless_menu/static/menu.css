@@ -1,0 +1,208 @@
+.sidebar {
+    color: #7d84ab;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+.sidebar-layout {
+    height: auto;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #0c1e35;
+    z-index: 2;
+}
+
+.sidebar-header {
+    height: 100px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.sidebar-header > span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sidebar-content {
+    flex-grow: 1;
+    padding: 10px 0;
+}
+
+.layout .sidebar .menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-header {
+    font-weight: 600;
+    padding: 10px 25px;
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    transition: opacity 0.3s;
+    opacity: 0.5;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    color: #7d84ab;
+}
+
+.menu-title {
+    font-size: 0.9em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-grow: 1;
+    transition: color 0.3s;
+    color: #dee2ec;
+
+}
+
+.layout .sidebar .menu .menu-item a:hover::after {
+    border-color: #dee2ec !important;
+}
+
+.menu-item.sub-menu {
+    position: relative;
+}
+
+.menu-item.sub-menu > a::after {
+    content: '';
+    transition: transform 0.3s;
+    border-right: 2px solid currentcolor;
+    border-bottom: 2px solid currentcolor;
+    width: 5px;
+    height: 5px;
+    transform: rotate(-45deg);
+}
+
+.menu-item.sub-menu > .sub-menu-list {
+    padding-left: 20px;
+    display: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.menu-item.sub-menu.open > a {
+    color: #dee2ec;
+}
+
+.layout .sidebar .menu .menu-item.sub-menu.open > a::after {
+    transform: rotate(45deg);
+}
+
+.layout .sidebar .menu .menu-item.active > a .menu-title {
+    color: #dee2ec;
+}
+
+.layout .sidebar .menu .menu-item.active > a::after {
+    border-color: #dee2ec;
+}
+
+.layout .sidebar .menu > ul > .sub-menu > .sub-menu-list {
+    background-color: #0b1a2c;
+}
+
+.layout .sidebar:not(.collapsed) .menu > ul > .menu-item.sub-menu > .sub-menu-list {
+    visibility: visible !important;
+    position: static !important;
+    transform: translate(0, 0) !important;
+}
+
+.layout .sidebar.collapsed .menu > ul > .menu-item.sub-menu > a::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: currentcolor;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    border: none;
+    transform: translateY(-50%);
+}
+
+.layout .sidebar.collapsed .menu > ul > .menu-item.sub-menu > a:hover::after {
+    background-color: #dee2ec;
+}
+
+.layout .sidebar.collapsed .menu > ul > .menu-item.sub-menu > .sub-menu-list {
+    transition: none !important;
+    width: 200px;
+    margin-left: 3px !important;
+    border-radius: 4px;
+    display: block !important;
+}
+
+.layout .sidebar.collapsed .menu > ul > .menu-item.active > a::after {
+    background-color: #dee2ec;
+}
+
+.layout .sidebar.has-bg-image:not(.collapsed) .menu > ul > .sub-menu > .sub-menu-list {
+    background-color: rgba(11, 26, 44, 0.6);
+}
+
+.layout.rtl .sidebar .menu .menu-item a .menu-icon {
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.layout.rtl .sidebar .menu .menu-item.sub-menu > a::after {
+    transform: rotate(135deg);
+}
+
+.layout.rtl .sidebar .menu .menu-item.sub-menu > .sub-menu-list {
+    padding-left: 0;
+    padding-right: 20px;
+}
+
+.menu-item.sub-menu.open > a::after {
+    transform: rotate(45deg);
+}
+
+.menu > ul > .menu-item.sub-menu a::after {
+    right: auto;
+    left: 10px;
+}
+
+.menu > ul > .menu-item.sub-menu > .sub-menu-list {
+    margin-left: -3px !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #3f4750;
+    font-size: 0.9rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.sidebar-logo > h5 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    line-height: 30px;
+    transition: opacity 0.3s;
+    opacity: 1;
+}
+
+ 

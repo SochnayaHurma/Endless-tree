@@ -1,0 +1,12 @@
+<ul>
+    {% for root, children, active in tree %}
+    <li class="menu-item {% if children %}sub-menu{% endif %}{% if active %} open {% endif %}">
+        <a href="#{{ root }}">
+            <span class="menu-title">{{ root }}</span>
+        </a>
+        <div class="sub-menu-list">
+            {% include 'menu-item.html' with tree=children %}
+        </div>
+    </li>
+    {% endfor %}
+</ul>

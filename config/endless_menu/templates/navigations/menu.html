@@ -1,0 +1,16 @@
+<aside id="sidebar" class="sidebar break-point-sm has-bg-image">
+    <a id="btn-collapse" class="sidebar-collapser"><i class="ri-arrow-left-s-line"></i></a>
+    <div class="sidebar-layout">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <h5>Menu 1</h5>
+            </div>
+        </div>
+        <div class="sidebar-content">
+            <nav class="menu open-current-submenu">
+                {% include 'navigations/_inc/menu-item.html' with tree=tree %}
+            </nav>
+        </div>
+    </div>
+</aside>
+<div id="overlay" class="overlay"></div>
