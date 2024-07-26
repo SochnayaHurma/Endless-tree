@@ -4,6 +4,10 @@ from django.core.exceptions import ValidationError
 
 
 class MenuList(models.Model):
+    class Meta:
+        verbose_name = 'Меню'
+        verbose_name_plural = 'Меню'
+
     name = models.CharField(max_length=255)
 
     def __str__(self):
@@ -11,6 +15,10 @@ class MenuList(models.Model):
 
 
 class MenuElements(models.Model):
+    class Meta:
+        verbose_name = 'Элемент меню'
+        verbose_name_plural = 'Элементы меню'
+
     menu = models.ForeignKey(MenuList, on_delete=models.CASCADE, default=1)
     name = models.CharField('Название', max_length=20)
     parent = models.ForeignKey(
