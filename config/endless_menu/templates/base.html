@@ -7,13 +7,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'menu.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/css-pro-layout@1.1.0/dist/css/css-pro-layout.css">
+    <link rel="stylesheet" href="{% static 'menu.css' %}">
     <title>Endless tree</title>
 </head>
 <body>
 <div class="layout has-sidebar fixed-sidebar fixed-header">
-    {% draw_menu request 'main' %}
+    {% draw_menu 'main' %}
 </div>
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="{% static 'menu.js'%}"></script>
