@@ -13,6 +13,7 @@ class MainMenuInline(admin.TabularInline):
 class MainMenuAdmin(admin.ModelAdmin):
     list_display = ['name', 'parent']
     inlines = [MainMenuInline]
+    list_filter = ['menu__name']
 
     def get_form(self, request, *args, **kwargs):
         form = super().get_form(request, *args, **kwargs)
