@@ -1,7 +1,8 @@
 <ul>
     {% for root, children, active in tree %}
     <li class="menu-item {% if children %}sub-menu{% endif %}{% if active %} open {% endif %}">
-        <a class="{% if active %} active {% endif%}" href="{{ root.get_absolute_url }}">
+        <a class="{% if active %} active {% endif%}"
+                href="{{ root.get_absolute_url }}">
             <span class="menu-title">{{ root }}</span>
         </a>
         <div class="sub-menu-list">

@@ -74,6 +74,7 @@
 .menu-item.sub-menu {
     position: relative;
 }
+
 .menu-item.sub-menu > a::after {
     content: '';
     transition: transform 0.3s;
@@ -203,8 +204,24 @@ a {
     transition: opacity 0.3s;
     opacity: 1;
 }
+
 .active {
-    background-color: #1d2c7a !important;
+        background-color: #071320;
 }
 
- 
+.sub-menu {
+    box-sizing: border-box;
+    transition-property: height, margin, padding;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+.open >.sub-menu-list {
+    display: block!important;
+}
+
+.open > .sub-menu-list > ul {
+    border-left: #7d84ab 2px solid !important;
+}
