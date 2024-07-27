@@ -19,11 +19,12 @@ class MenuElements(models.Model):
         verbose_name = 'Элемент меню'
         verbose_name_plural = 'Элементы меню'
 
-    menu = models.ForeignKey(MenuList, on_delete=models.CASCADE, default=1)
-    name = models.CharField('Название', max_length=20)
+    menu = models.ForeignKey(MenuList, verbose_name='Меню', on_delete=models.CASCADE, default=1)
+    name = models.CharField('Категория', max_length=20)
     parent = models.ForeignKey(
         'MenuElements',
         on_delete=models.CASCADE,
+        verbose_name='Родительская категория',
         null=True,
         blank=True
     )
